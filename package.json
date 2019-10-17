@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/citta-lab/babel-test.git"
@@ -15,5 +12,34 @@
   "bugs": {
     "url": "https://github.com/citta-lab/babel-test/issues"
   },
-  "homepage": "https://github.com/citta-lab/babel-test#readme"
+  "homepage": "https://github.com/citta-lab/babel-test#readme",
+  "scripts": {
+    "build": "webpack --mode production -w",
+    "build:lib": "babel src --out-dir libTranformModules --copy-files --ignore '**/*.test.*'",
+    "target": "./node_modules/.bin/babel src --out-dir target"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^23.0.1",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-array-includes": "^2.0.3",
+    "browserslist": "^4.6.6",
+    "terser-webpack-plugin": "^2.1.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  }
 }
